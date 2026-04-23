@@ -8,6 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://res.cloudinary.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
 
 <style>
@@ -195,6 +196,7 @@
     position:relative;overflow:hidden;
     background:var(--navy);cursor:pointer;
     transition:all .4s cubic-bezier(.2,.8,.2,1);
+    min-height:200px;
   }
   .photo img{
     width:100%;height:auto;display:block;
@@ -206,7 +208,7 @@
     background:linear-gradient(to top, rgba(5,13,36,.85) 0%, rgba(5,13,36,.2) 40%, transparent 70%);
     opacity:0;transition:opacity .4s;
     display:flex;flex-direction:column;justify-content:flex-end;
-    padding:24px;
+    padding:24px;pointer-events:none;
   }
   .photo:hover .photo-overlay{opacity:1}
   .photo-cat{
@@ -230,6 +232,7 @@
     display:flex;align-items:center;justify-content:center;
     color:var(--navy);font-size:16px;
     opacity:0;transform:scale(.8);transition:all .4s;
+    pointer-events:none;
   }
   .photo:hover .photo-expand{opacity:1;transform:scale(1)}
   @media(max-width:900px){
@@ -344,7 +347,7 @@
 
   .featured-visual{
     aspect-ratio:4/5;position:relative;overflow:hidden;
-    box-shadow:var(--shadow-lg);
+    box-shadow:var(--shadow-lg);background:var(--navy);
   }
   .featured-visual::after{
     content:"";position:absolute;inset:20px;
@@ -644,7 +647,7 @@
     <div class="featured-project reveal">
       <div class="featured-visual">
         <div class="featured-visual-label">— Projet 01</div>
-        <img src="photos/mariages/mariage-35.jpg" alt="Mariage d'Exception" onerror="this.style.display='none'">
+        <img src="https://res.cloudinary.com/dzd4bw9fk/image/upload/f_auto,q_auto,w_1200/mariages/mariage-35" alt="Mariage d'Exception" loading="lazy">
         <div class="featured-visual-num">01</div>
       </div>
       <div class="featured-content">
@@ -668,7 +671,7 @@
     <div class="featured-project reverse reveal">
       <div class="featured-visual">
         <div class="featured-visual-label">— Projet 02</div>
-        <img src="photos/corporatif/corporatif-10.jpg" alt="Événement Corporatif Ayelia" onerror="this.style.display='none'">
+        <img src="https://res.cloudinary.com/dzd4bw9fk/image/upload/f_auto,q_auto,w_1200/corporatif/corporatif-10" alt="Événement Corporatif Ayelia" loading="lazy">
         <div class="featured-visual-num">02</div>
       </div>
       <div class="featured-content">
@@ -692,7 +695,7 @@
     <div class="featured-project reveal">
       <div class="featured-visual">
         <div class="featured-visual-label">— Projet 03</div>
-        <img src="photos/nightlife/nightlife-45.jpg" alt="The Palace Nightlife" onerror="this.style.display='none'">
+        <img src="https://res.cloudinary.com/dzd4bw9fk/image/upload/f_auto,q_auto,w_1200/nightlife/nightlife-45" alt="The Palace Nightlife" loading="lazy">
         <div class="featured-visual-num">03</div>
       </div>
       <div class="featured-content">
@@ -834,25 +837,36 @@
 </footer>
 
 <script>
+  // Cloudinary config
+  const CLOUD_NAME = 'dzd4bw9fk';
+  const CLOUDINARY_BASE = 'https://res.cloudinary.com/' + CLOUD_NAME + '/image/upload';
+  // Thumbnail version (smaller, for the grid)
+  const THUMB_TRANSFORM = 'f_auto,q_auto,w_800';
+  // Full-size version (for the lightbox)
+  const FULL_TRANSFORM = 'f_auto,q_auto,w_1920';
+
   const CATEGORIES = {
-    mariage:    { folder:'mariages',    prefix:'mariage',     count:123, ext:'jpg', label:'Mariage',     title:'Mariage d\u0027Exception' },
-    corporate:  { folder:'corporatif',  prefix:'corporatif',  count:37,  ext:'jpg', label:'Corporatif',  title:'Corporate' },
-    photoshoot: { folder:'photoshoots', prefix:'photoshoots', count:159, ext:'jpg', label:'Photoshoot',  title:'Photoshoot' },
-    design:     { folder:'design',      prefix:'design',      count:29,  ext:'jpg', label:'Design',      title:'Design' },
-    private:    { folder:'celebrations',prefix:'celebrations',count:100, ext:'jpg', label:'Célébration', title:'Célébration' },
-    nightlife:  { folder:'nightlife',   prefix:'nightlife',   count:108, ext:'jpg', label:'Nightlife',   title:'Nightlife' }
+    mariage:    { folder:'mariages',    prefix:'mariage',     count:123, label:'Mariage',     title:'Mariage d\u0027Exception' },
+    corporate:  { folder:'corporatif',  prefix:'corporatif',  count:37,  label:'Corporatif',  title:'Corporate' },
+    photoshoot: { folder:'photoshoots', prefix:'photoshoots', count:159, label:'Photoshoot',  title:'Photoshoot' },
+    design:     { folder:'design',      prefix:'design',      count:29,  label:'Design',      title:'Design' },
+    private:    { folder:'celebrations',prefix:'celebrations',count:100, label:'Célébration', title:'Célébration' },
+    nightlife:  { folder:'nightlife',   prefix:'nightlife',   count:108, label:'Nightlife',   title:'Nightlife' }
   };
-  const EXCEPTIONS = { 'design-25':'png' };
+
+  function buildUrl(folder, name, transform) {
+    return CLOUDINARY_BASE + '/' + transform + '/' + folder + '/' + name;
+  }
 
   function buildAllPhotos() {
     const all = [];
     for (const [key, cat] of Object.entries(CATEGORIES)) {
       for (let i = 1; i <= cat.count; i++) {
-        const fileName = cat.prefix + '-' + i;
-        const ext = EXCEPTIONS[fileName] || cat.ext;
+        const name = cat.prefix + '-' + i;
         all.push({
           category: key,
-          src: 'photos/' + cat.folder + '/' + fileName + '.' + ext,
+          thumb: buildUrl(cat.folder, name, THUMB_TRANSFORM),
+          full: buildUrl(cat.folder, name, FULL_TRANSFORM),
           label: cat.label,
           title: cat.title + ' · N°' + i
         });
@@ -893,11 +907,11 @@
       const div = document.createElement('div');
       div.className = 'photo';
       div.dataset.category = photo.category;
-      div.dataset.src = photo.src;
+      div.dataset.full = photo.full;
       div.dataset.label = photo.label;
       div.dataset.title = photo.title;
       const img = document.createElement('img');
-      img.src = photo.src;
+      img.src = photo.thumb;
       img.alt = photo.title;
       img.loading = 'lazy';
       img.onerror = function() { div.style.display = 'none'; };
@@ -977,7 +991,7 @@
   function updateLightbox() {
     const p = currentVisiblePhotos[currentPhotoIndex];
     if (!p) return;
-    lightboxImg.src = p.dataset.src;
+    lightboxImg.src = p.dataset.full;
     lightboxImg.alt = p.dataset.title;
     lightboxCat.textContent = p.dataset.label;
     lightboxCount.textContent = (currentPhotoIndex + 1) + ' / ' + currentVisiblePhotos.length;
@@ -1012,7 +1026,6 @@
     if (e.key === 'ArrowRight') navLightbox(1);
   });
 
-  // Reveal animation
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if(entry.isIntersecting) {
@@ -1023,7 +1036,6 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Initial render
   renderBatch();
 </script>
 
