@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comment Couvrir un Mariage de A à Z — Blog NP PROD</title>
+<meta name="description" content="Guide complet pour photographes et vidéastes : préparation avant le mariage, gestion du jour J et post-production. Notre méthode éprouvée sur 120+ mariages.">
+
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="NP PROD">
+<meta property="og:title" content="Comment Couvrir un Mariage de A à Z — Blog NP PROD">
+<meta property="og:description" content="Le guide complet pour photographes et vidéastes : préparation, jour J et post-production.">
+<meta property="og:url" content="https://npprod.ca/blog-article-1.html">
+<meta property="og:image" content="https://res.cloudinary.com/dzd4bw9fk/image/upload/f_auto,q_auto,w_1200/mariage-35">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://res.cloudinary.com/dzd4bw9fk/image/upload/f_auto,q_auto,w_1200/mariage-35">
+<meta name="theme-color" content="#0a1a3a">
+<meta name="author" content="NP PROD">
+<meta property="article:published_time" content="2026-04-23">
+<meta property="article:section" content="Mariages">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://res.cloudinary.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy:#0a1a3a;--navy-deep:#050d24;--navy-soft:#1a2d5c;
+    --blue:#2a52be;--blue-light:#c8d8f5;
+    --gold:#c9a96e;--gold-light:#e8d5a8;
+    --cream:#f8f4ec;--cream-warm:#f2ebdc;
+    --ink:#0e1524;--muted:#5a6378;
+    --line:rgba(10,26,58,.12);
+    --shadow-sm:0 4px 20px rgba(10,26,58,.08);
+    --shadow-md:0 12px 40px rgba(10,26,58,.12);
+    --shadow-lg:0 30px 80px rgba(10,26,58,.18);
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --display:'Italiana', serif;
+    --sans:'Inter', sans-serif;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);color:var(--ink);
+    background:var(--cream);overflow-x:hidden;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--navy);color:var(--cream)}
+
+  /* NAV */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:22px 40px;
+    display:flex;justify-content:space-between;align-items:center;
+    background:rgba(248,244,236,.85);
+    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+    border-bottom:1px solid transparent;transition:all .3s ease;
+  }
+  .nav.scrolled{border-bottom:1px solid var(--line);padding:16px 40px}
+  .nav-logo{font-family:var(--display);font-size:22px;letter-spacing:.2em;color:var(--navy);text-decoration:none}
+  .nav-logo span{color:var(--gold)}
+  .nav-links{display:flex;gap:36px;list-style:none}
+  .nav-links a{
+    color:var(--navy);text-decoration:none;font-size:12px;
+    font-weight:500;letter-spacing:.15em;text-transform:uppercase;
+    position:relative;transition:color .2s;
+  }
+  .nav-links a.active{color:var(--gold)}
+  .nav-links a::after{
+    content:"";position:absolute;bottom:-6px;left:0;width:0;height:1px;
+    background:var(--gold);transition:width .3s ease;
+  }
+  .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+  .nav-cta{
+    padding:10px 24px;background:var(--navy);color:var(--cream);
+    text-decoration:none;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;font-weight:500;transition:all .3s;
+  }
+  .nav-cta:hover{background:var(--gold);color:var(--navy)}
+
+  .nav-burger{
+    display:none;background:transparent;border:none;cursor:pointer;
+    width:36px;height:36px;
+    flex-direction:column;justify-content:center;align-items:center;
+    gap:6px;padding:0;z-index:101;
+  }
+  .nav-burger-line{width:24px;height:1.5px;background:var(--navy);transition:all .3s ease}
+  .nav-burger.active .nav-burger-line:nth-child(1){transform:translateY(7.5px) rotate(45deg);background:var(--cream)}
+  .nav-burger.active .nav-burger-line:nth-child(2){opacity:0}
+  .nav-burger.active .nav-burger-line:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);background:var(--cream)}
+
+  .mobile-menu{
+    position:fixed;top:0;right:0;bottom:0;left:0;
+    background:var(--navy-deep);z-index:99;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding:40px 24px;opacity:0;visibility:hidden;
+    transition:opacity .4s ease, visibility .4s ease;
+  }
+  .mobile-menu.active{opacity:1;visibility:visible}
+  .mobile-menu::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(201,169,110,.15), transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(42,82,190,.2), transparent 50%);
+    pointer-events:none;
+  }
+  .mobile-menu-links{
+    list-style:none;padding:0;margin:0;
+    display:flex;flex-direction:column;gap:28px;
+    text-align:center;position:relative;z-index:2;
+  }
+  .mobile-menu-links a{
+    font-family:var(--display);font-size:32px;letter-spacing:.05em;
+    color:var(--cream);text-decoration:none;transition:color .3s ease;
+  }
+  .mobile-menu-links a:hover,.mobile-menu-links a.active{color:var(--gold)}
+  .mobile-menu-divider{width:60px;height:1px;background:rgba(232,213,168,.3);margin:20px auto}
+  .mobile-menu-cta{
+    display:inline-block;padding:16px 36px;
+    background:var(--gold);color:var(--navy);
+    font-family:var(--sans);font-size:12px;letter-spacing:.3em;
+    text-transform:uppercase;font-weight:600;
+    text-decoration:none;transition:all .3s;position:relative;z-index:2;
+  }
+  .mobile-menu-cta:hover{background:var(--cream);transform:translateY(-2px)}
+  .mobile-menu-socials{display:flex;gap:24px;margin-top:40px;position:relative;z-index:2}
+  .mobile-menu-socials a{
+    font-size:11px;letter-spacing:.25em;color:rgba(248,244,236,.6);
+    text-transform:uppercase;text-decoration:none;transition:color .3s;
+  }
+  .mobile-menu-socials a:hover{color:var(--gold)}
+  body.menu-open{overflow:hidden}
+
+  @media(max-width:900px){
+    .nav{padding:18px 24px}
+    .nav-links{display:none}
+    .nav-burger{display:flex}
+    .nav-cta{display:none}
+  }
+
+  /* HERO ARTICLE */
+  .article-hero{
+    padding:180px 40px 60px;position:relative;
+    background:var(--cream);
+  }
+  .article-hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:2}
+  .article-breadcrumb{
+    font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:30px;
+  }
+  .article-breadcrumb a{color:var(--navy);text-decoration:none}
+  .article-breadcrumb a:hover{color:var(--gold)}
+  .article-breadcrumb span{margin:0 12px;color:var(--line)}
+  .article-category-tag{
+    display:inline-block;
+    padding:6px 16px;
+    background:var(--gold);color:var(--navy);
+    font-family:var(--sans);font-size:10px;
+    letter-spacing:.3em;text-transform:uppercase;font-weight:600;
+    margin-bottom:30px;
+  }
+  .article-hero h1{
+    font-family:var(--display);
+    font-size:clamp(44px, 6vw, 84px);
+    color:var(--navy);line-height:1;
+    margin-bottom:30px;letter-spacing:-.02em;
+  }
+  .article-hero h1 em{
+    font-family:var(--serif);font-style:italic;
+    color:var(--gold);font-weight:300;
+  }
+  .article-meta{
+    display:flex;gap:30px;align-items:center;
+    padding-top:30px;
+    border-top:1px solid var(--line);
+    flex-wrap:wrap;
+  }
+  .article-author{
+    display:flex;align-items:center;gap:16px;
+  }
+  .article-author-avatar{
+    width:56px;height:56px;border-radius:50%;
+    background:linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold);font-family:var(--display);font-size:22px;
+    border:2px solid var(--gold);
+  }
+  .article-author-name{
+    font-family:var(--display);font-size:16px;
+    letter-spacing:.2em;color:var(--navy);
+    text-transform:uppercase;font-weight:500;
+  }
+  .article-author-title{
+    font-family:var(--serif);font-style:italic;
+    font-size:14px;color:var(--muted);margin-top:2px;
+  }
+  .article-info-item{
+    font-size:11px;letter-spacing:.25em;
+    text-transform:uppercase;color:var(--muted);
+  }
+  .article-info-item strong{
+    display:block;color:var(--navy);font-size:15px;
+    font-family:var(--display);font-weight:400;
+    letter-spacing:.15em;margin-top:4px;
+  }
+  @media(max-width:768px){
+    .article-hero{padding:140px 24px 40px}
+    .article-meta{gap:20px}
+  }
+
+  /* COVER IMAGE */
+  .article-cover{
+    max-width:1200px;margin:0 auto 80px;
+    padding:0 40px;
+  }
+  .article-cover-img{
+    width:100%;aspect-ratio:16/9;
+    background-size:cover;background-position:center;
+    box-shadow:var(--shadow-lg);
+  }
+  @media(max-width:768px){
+    .article-cover{padding:0 24px;margin-bottom:50px}
+  }
+
+  /* CONTENT */
+  .article-content{
+    max-width:800px;margin:0 auto;
+    padding:0 40px 80px;
+    font-family:var(--serif);
+  }
+  .article-content p{
+    font-size:20px;line-height:1.8;color:var(--ink);
+    margin-bottom:28px;
+  }
+  .article-content p.lead{
+    font-size:24px;line-height:1.7;
+    color:var(--navy);font-style:italic;
+    padding:30px 0;margin:0 0 40px;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .article-content h2{
+    font-family:var(--display);
+    font-size:clamp(32px, 4vw, 48px);
+    color:var(--navy);line-height:1.1;
+    margin:60px 0 24px;letter-spacing:-.01em;
+    display:flex;align-items:baseline;gap:20px;
+  }
+  .article-content h2::before{
+    content:attr(data-num);
+    font-family:var(--display);font-size:.5em;
+    color:var(--gold);letter-spacing:.2em;
+    font-style:normal;flex-shrink:0;
+  }
+  .article-content h3{
+    font-family:var(--display);
+    font-size:28px;color:var(--navy);
+    margin:40px 0 16px;line-height:1.2;
+  }
+  .article-content ul, .article-content ol{
+    margin:0 0 28px 0;padding-left:0;list-style:none;
+  }
+  .article-content ul li, .article-content ol li{
+    font-size:19px;line-height:1.7;color:var(--ink);
+    margin-bottom:14px;padding-left:36px;position:relative;
+  }
+  .article-content ul li::before{
+    content:"";position:absolute;
+    left:0;top:14px;
+    width:20px;height:1px;
+    background:var(--gold);
+  }
+  .article-content ol{counter-reset:item}
+  .article-content ol li{counter-increment:item}
+  .article-content ol li::before{
+    content:counter(item, decimal-leading-zero);
+    position:absolute;left:0;top:0;
+    font-family:var(--display);font-size:16px;
+    color:var(--gold);font-weight:400;
+    letter-spacing:.1em;
+  }
+  .article-content strong{color:var(--navy);font-weight:600;font-family:var(--sans)}
+  .article-content em{font-style:italic;color:var(--navy)}
+  .article-content a{
+    color:var(--gold);text-decoration:underline;
+    text-underline-offset:4px;text-decoration-thickness:1px;
+  }
+  .article-content a:hover{color:var(--navy)}
+
+  .article-quote{
+    margin:60px 0;padding:40px 50px;
+    background:var(--cream-warm);
+    border-left:3px solid var(--gold);
+    position:relative;
+  }
+  .article-quote::before{
+    content:"\201C";
+    position:absolute;top:-20px;left:30px;
+    font-family:var(--display);font-size:120px;
+    color:var(--gold);line-height:1;
+    opacity:.4;
+  }
+  .article-quote p{
+    font-family:var(--display);font-size:28px;
+    color:var(--navy);line-height:1.3;
+    margin-bottom:16px;font-style:italic;
+  }
+  .article-quote cite{
+    display:block;
+    font-family:var(--sans);font-size:11px;
+    letter-spacing:.3em;text-transform:uppercase;
+    color:var(--muted);font-style:normal;font-weight:500;
+  }
+
+  .article-tip{
+    margin:40px 0;padding:30px 35px;
+    background:#fdfbf5;
+    border:1px solid var(--gold);
+    position:relative;
+  }
+  .article-tip-label{
+    font-family:var(--display);font-size:12px;
+    letter-spacing:.4em;color:var(--gold);
+    text-transform:uppercase;margin-bottom:12px;
+  }
+  .article-tip p{
+    font-size:18px;margin:0;line-height:1.6;
+  }
+
+  .article-image{
+    margin:50px 0;
+  }
+  .article-image-inner{
+    width:100%;aspect-ratio:16/10;
+    background-size:cover;background-position:center;
+    box-shadow:var(--shadow-md);
+  }
+  .article-image-caption{
+    font-size:13px;color:var(--muted);
+    font-style:italic;margin-top:14px;text-align:center;
+  }
+
+  .article-checklist{
+    margin:40px 0;padding:36px 40px;
+    background:var(--navy);color:var(--cream);
+    position:relative;
+  }
+  .article-checklist::before{
+    content:"✦";
+    position:absolute;top:20px;right:30px;
+    font-family:var(--display);font-size:24px;
+    color:var(--gold);
+  }
+  .article-checklist-title{
+    font-family:var(--display);font-size:13px;
+    letter-spacing:.4em;color:var(--gold);
+    text-transform:uppercase;margin-bottom:20px;
+  }
+  .article-checklist h4{
+    font-family:var(--display);font-size:28px;
+    color:var(--cream);margin-bottom:20px;
+  }
+  .article-checklist ul{list-style:none;padding:0;margin:0}
+  .article-checklist ul li{
+    font-family:var(--serif);font-size:18px;
+    color:var(--cream);line-height:1.6;
+    margin-bottom:14px;padding-left:30px;position:relative;
+  }
+  .article-checklist ul li::before{
+    content:"☐";position:absolute;left:0;top:-2px;
+    color:var(--gold);font-size:20px;
+  }
+
+  @media(max-width:768px){
+    .article-content{padding:0 24px 60px}
+    .article-content p{font-size:17px}
+    .article-content ul li, .article-content ol li{font-size:16px}
+    .article-quote{padding:30px 30px;margin:40px 0}
+    .article-quote p{font-size:22px}
+    .article-checklist{padding:28px 24px}
+  }
+
+  /* SHARE */
+  .article-share{
+    max-width:800px;margin:0 auto;padding:40px;
+    background:var(--cream-warm);
+    display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:20px;
+  }
+  .article-share-label{
+    font-family:var(--display);font-size:14px;
+    letter-spacing:.4em;color:var(--navy);
+    text-transform:uppercase;
+  }
+  .article-share-btns{display:flex;gap:12px;flex-wrap:wrap}
+  .share-btn{
+    padding:12px 22px;background:var(--navy);color:var(--cream);
+    border:none;cursor:pointer;text-decoration:none;
+    font-family:var(--sans);font-size:11px;
+    letter-spacing:.2em;text-transform:uppercase;font-weight:500;
+    transition:all .3s;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .share-btn:hover{background:var(--gold);color:var(--navy)}
+  @media(max-width:600px){
+    .article-share{flex-direction:column;align-items:flex-start;padding:30px 24px;margin:0 24px}
+  }
+
+  /* CTA */
+  .article-cta{
+    background:var(--navy-deep);color:var(--cream);
+    padding:100px 40px;text-align:center;
+    position:relative;overflow:hidden;
+  }
+  .article-cta::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(201,169,110,.15), transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(42,82,190,.2), transparent 50%);
+  }
+  .article-cta-inner{position:relative;z-index:2;max-width:700px;margin:0 auto}
+  .article-cta h2{
+    font-family:var(--display);
+    font-size:clamp(36px, 5vw, 64px);
+    color:var(--cream);line-height:1.05;margin-bottom:20px;
+  }
+  .article-cta h2 em{font-family:var(--serif);font-style:italic;color:var(--gold)}
+  .article-cta p{
+    font-family:var(--serif);font-size:20px;
+    color:rgba(248,244,236,.75);margin-bottom:40px;
+  }
+  .article-cta-btn{
+    display:inline-block;padding:18px 40px;
+    background:var(--gold);color:var(--navy);
+    text-decoration:none;font-family:var(--sans);font-size:12px;
+    letter-spacing:.3em;text-transform:uppercase;font-weight:600;
+    transition:all .3s;
+  }
+  .article-cta-btn:hover{background:var(--cream);transform:translateY(-2px)}
+
+  /* RELATED */
+  .related{padding:100px 40px;background:var(--cream)}
+  .related-inner{max-width:1280px;margin:0 auto}
+  .related-head{text-align:center;margin-bottom:50px}
+  .related-head h2{
+    font-family:var(--display);
+    font-size:clamp(36px, 5vw, 60px);
+    color:var(--navy);line-height:1.1;
+  }
+  .related-head h2 em{font-family:var(--serif);font-style:italic;color:var(--gold)}
+  .related-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:24px}
+  .related-card{
+    background:#fdfbf5;border:1px solid var(--line);
+    padding:40px 30px;text-decoration:none;color:inherit;
+    transition:all .3s;text-align:center;
+  }
+  .related-card:hover{
+    transform:translateY(-4px);box-shadow:var(--shadow-md);
+    border-color:var(--gold);
+  }
+  .related-card-mark{
+    font-family:var(--display);font-size:40px;
+    color:var(--gold);opacity:.6;margin-bottom:16px;
+  }
+  .related-card h3{
+    font-family:var(--display);font-size:22px;
+    color:var(--navy);margin-bottom:12px;
+  }
+  .related-card p{
+    font-family:var(--serif);font-size:15px;
+    color:var(--muted);line-height:1.5;
+  }
+  @media(max-width:900px){
+    .related{padding:70px 24px}
+    .related-grid{grid-template-columns:1fr;gap:16px}
+  }
+
+  /* FOOTER */
+  .footer{background:var(--navy-deep);color:var(--cream);padding:80px 40px 40px}
+  .footer-inner{
+    max-width:1280px;margin:0 auto;
+    display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px;
+  }
+  .footer-brand .logo{
+    font-family:var(--display);font-size:32px;
+    letter-spacing:.2em;margin-bottom:20px;color:var(--gold);
+  }
+  .footer-brand p{
+    font-family:var(--serif);font-style:italic;
+    color:rgba(248,244,236,.6);max-width:300px;line-height:1.6;
+  }
+  .footer-col h5{
+    font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:24px;font-weight:500;
+  }
+  .footer-col ul{list-style:none}
+  .footer-col li{margin-bottom:12px}
+  .footer-col a{color:rgba(248,244,236,.7);text-decoration:none;font-size:14px;transition:color .2s}
+  .footer-col a:hover{color:var(--gold)}
+  .footer-bar{
+    border-top:1px solid rgba(232,213,168,.15);padding-top:30px;
+    max-width:1280px;margin:0 auto;
+    display:flex;justify-content:space-between;align-items:center;
+    flex-wrap:wrap;gap:20px;
+  }
+  .footer-bar p{font-size:12px;color:rgba(248,244,236,.5);letter-spacing:.05em}
+  .footer-socials{display:flex;gap:20px}
+  .footer-socials a{
+    color:rgba(248,244,236,.6);font-size:12px;
+    letter-spacing:.15em;text-transform:uppercase;text-decoration:none;
+  }
+  .footer-socials a:hover{color:var(--gold)}
+  @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;gap:40px}}
+  @media(max-width:500px){.footer-inner{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">NP<span>·</span>PROD</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="clients.html">Clients</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="index.html#pricing">Tarifs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Réserver</a>
+  <button class="nav-burger" id="nav-burger" aria-label="Menu">
+    <span class="nav-burger-line"></span>
+    <span class="nav-burger-line"></span>
+    <span class="nav-burger-line"></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul class="mobile-menu-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="clients.html">Clients</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="index.html#pricing">Tarifs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="mobile-menu-divider"></div>
+  <a href="contact.html" class="mobile-menu-cta">Réserver un projet</a>
+  <div class="mobile-menu-socials">
+    <a href="https://www.instagram.com/np_boss/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@npboss229" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.facebook.com/NpProdu/" target="_blank" rel="noopener">Facebook</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-breadcrumb">
+      <a href="index.html">Accueil</a><span>/</span>
+      <a href="blog.html">Blog</a><span>/</span>Article
+    </div>
+    <div class="article-category-tag">Mariages & Cérémonies</div>
+    <h1>Comment Couvrir un Mariage de <em>A à Z</em></h1>
+    <div class="article-meta">
+      <div class="article-author">
+        <div class="article-author-avatar">NP</div>
+        <div>
+          <div class="article-author-name">NP PROD</div>
+          <div class="article-author-title">Agence créative</div>
+        </div>
+      </div>
+      <div class="article-info-item">
+        Publié le
+        <strong>23 Avril 2026</strong>
+      </div>
+      <div class="article-info-item">
+        Lecture
+        <strong>12 minutes</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVER -->
+<div class="article-cover">
+  <div class="article-cover-img" style="background-image:url('https://res.cloudinary.com/dzd4bw9fk/image/upload/f_auto,q_auto,w_1800/mariage-35');"></div>
+</div>
+
+<!-- CONTENT -->
+<article class="article-content">
+
+  <p class="lead">Un mariage, c'est une seule journée. Mais derrière chaque photo réussie, chaque vidéo émouvante, il y a des semaines de préparation, des heures de terrain et des dizaines d'heures de post-production. Voici notre méthode éprouvée sur plus de 120 mariages couverts à Ottawa, Montréal et Cotonou.</p>
+
+  <p>Couvrir un mariage, ce n'est pas simplement appuyer sur un déclencheur. C'est <strong>raconter une histoire</strong>, <strong>capturer des émotions</strong> et <strong>créer des souvenirs</strong> qui traverseront les générations. Que vous soyez photographe débutant ou professionnel aguerri, cette méthode en trois phases vous permettra d'aborder chaque mariage avec sérénité et excellence.</p>
+
+  <div class="article-quote">
+    <p>Un beau mariage se prépare en amont, se capture dans l'instant, et se sublime en post-production.</p>
+    <cite>— La Méthode NP PROD</cite>
+  </div>
+
+  <h2 data-num="— 01">Phase 1 : La Préparation Avant le Jour J</h2>
+
+  <p>La réussite d'une couverture de mariage se joue à <strong>70% avant même d'arriver sur les lieux</strong>. C'est dans cette phase qu'on évite les mauvaises surprises, qu'on anticipe les besoins des mariés et qu'on construit une relation de confiance.</p>
+
+  <h3>La rencontre découverte</h3>
+
+  <p>Dès le premier contact avec les mariés, fixez un <em>call découverte</em> de 30 à 45 minutes. L'objectif : comprendre leur histoire, leurs attentes et leur personnalité. Cette étape est essentielle car elle détermine votre approche créative.</p>
+
+  <p>Les questions clés à poser :</p>
+  <ul>
+    <li>Quelle est l'histoire de votre rencontre ?</li>
+    <li>Quel type d'ambiance voulez-vous pour votre mariage : intime, grandiose, traditionnel, moderne ?</li>
+    <li>Combien d'invités sont attendus ?</li>
+    <li>Y a-t-il des traditions culturelles ou religieuses importantes à respecter ?</li>
+    <li>Quels sont les moments absolument incontournables pour vous ?</li>
+    <li>Avez-vous des références visuelles qui vous inspirent (Pinterest, Instagram) ?</li>
+  </ul>
+
+  <h3>Le repérage des lieux</h3>
+
+  <p>Deux à quatre semaines avant le mariage, <strong>visitez impérativement les lieux</strong> : mairie ou église, salle de réception, lieu du cocktail. Profitez-en pour :</p>
+
+  <ul>
+    <li>Identifier les meilleurs angles de prise de vue</li>
+    <li>Repérer les zones à éviter (arrière-plans disgracieux, sources de lumière problématiques)</li>
+    <li>Tester la lumière à l'heure prévue de la cérémonie</li>
+    <li>Discuter avec le personnel des lieux sur les restrictions (flash autorisé ? zones interdites ?)</li>
+    <li>Prévoir des plans B en cas de pluie si le mariage est en extérieur</li>
+  </ul>
+
+  <div class="article-tip">
+    <div class="article-tip-label">— Astuce Pro</div>
+    <p>Prenez des photos des lieux lors du repérage à la même heure que l'événement réel. Cela vous permettra de pré-visualiser la lumière et de construire un planning photo précis.</p>
+  </div>
+
+  <h3>La planification du timing (le shot list)</h3>
+
+  <p>Deux semaines avant, créez un <strong>planning détaillé heure par heure</strong> en coordination avec les mariés et le wedding planner s'il y en a un. Ce document doit inclure :</p>
+
+  <ol>
+    <li><strong>Préparatifs du matin</strong> (2h) : coiffure, maquillage, habillage, détails (bagues, bouquet, accessoires)</li>
+    <li><strong>First look ou photos de couple avant cérémonie</strong> (optionnel, 30min)</li>
+    <li><strong>Cérémonie</strong> (1h à 2h) : arrivée des invités, entrée des mariés, échange des vœux, sortie</li>
+    <li><strong>Photos de groupe</strong> (45min) : familles, témoins, amis proches</li>
+    <li><strong>Séance couple</strong> (45min à 1h) : c'est votre moment créatif privilégié</li>
+    <li><strong>Cocktail</strong> (1h à 2h) : ambiance, portraits spontanés</li>
+    <li><strong>Réception</strong> (3h à 5h) : entrée, repas, discours, première danse, soirée</li>
+  </ol>
+
+  <h3>Le matériel : la checklist non-négociable</h3>
+
+  <div class="article-checklist">
+    <div class="article-checklist-title">— La veille du mariage</div>
+    <h4>Checklist matériel</h4>
+    <ul>
+      <li>2 boîtiers photo (le second en backup absolu)</li>
+      <li>3 à 4 objectifs couvrant 24-70mm, 70-200mm et un fixe lumineux (50mm f/1.4 ou 85mm f/1.8)</li>
+      <li>2 flashs cobra + déclencheurs sans fil</li>
+      <li>Au moins 6 cartes mémoire formatées</li>
+      <li>4 batteries chargées par boîtier</li>
+      <li>Disque dur externe pour backup sur place</li>
+      <li>Trépied et monopode</li>
+      <li>Reflecteur 5-en-1</li>
+      <li>Kit de nettoyage optique</li>
+      <li>Vêtements de rechange discrets</li>
+      <li>Snacks et bouteille d'eau (vous n'aurez pas le temps de manger)</li>
+      <li>Chaussures confortables (vous marcherez 15+ km dans la journée)</li>
+    </ul>
+  </div>
+
+  <p>La veille, <strong>testez chaque appareil, chargez chaque batterie, formatez chaque carte mémoire</strong>. C'est fastidieux mais c'est votre assurance anti-catastrophe.</p>
+
+  <div class="article-image">
+    <div class="article-image-inner" style="background-image:url('https://res.cloudinary.com/dzd4bw9fk/image/upload/f_auto,q_auto,w_1400/mariage-67');"></div>
+    <div class="article-image-caption">— Une cérémonie bien préparée permet de capturer les émotions les plus pures.</div>
+  </div>
+
+  <h2 data-num="— 02">Phase 2 : Le Jour J, L'Art de l'Instant</h2>
+
+  <p>Le jour tant attendu est arrivé. Votre rôle : être partout sans être vu, capturer sans déranger, anticiper sans stresser. Voici comment gérer cette journée intense minute par minute.</p>
+
+  <h3>Arrivée et premiers pas (45 min avant le début prévu)</h3>
+
+  <p>Arrivez <strong>toujours en avance</strong>. Cela vous donne le temps de :</p>
+
+  <ul>
+    <li>Saluer les mariés et leur rappeler votre présence rassurante</li>
+    <li>Faire un dernier repérage lumière</li>
+    <li>Préparer votre matériel calmement</li>
+    <li>Capturer les détails avant qu'ils ne soient dérangés : robe suspendue, chaussures, alliances, invitations</li>
+  </ul>
+
+  <h3>Les préparatifs : intimité et émotion</h3>
+
+  <p>Les préparatifs sont un <strong>moment précieux d'émotions brutes</strong>. La mariée qui enfile sa robe, le marié qui ajuste sa cravate, les larmes de la mère, les rires des demoiselles d'honneur. Vous devez y être, mais avec <em>discrétion absolue</em>.</p>
+
+  <p>Conseils pour cette étape :</p>
+  <ul>
+    <li>Travaillez avec un objectif fixe lumineux pour éviter les flashs intrusifs</li>
+    <li>Favorisez la lumière naturelle de la fenêtre</li>
+    <li>Alternez plans larges, plans moyens et détails</li>
+    <li>Capturez les mains, les regards, les accessoires</li>
+    <li>Parlez peu, observez beaucoup</li>
+  </ul>
+
+  <h3>La cérémonie : le cœur battant de la journée</h3>
+
+  <p>C'est le moment le plus solennel. Respectez les règles du lieu (religieux notamment) et soyez invisible. Positionnez-vous stratégiquement :</p>
+
+  <ol>
+    <li>Un photographe dans l'allée centrale pour l'arrivée</li>
+    <li>Un second sur le côté pour les réactions du marié et de la famille</li>
+    <li>Un troisième au fond pour les plans larges</li>
+  </ol>
+
+  <p><strong>Les moments à ne JAMAIS rater :</strong></p>
+  <ul>
+    <li>L'arrivée de la mariée et le regard du marié</li>
+    <li>L'échange des vœux (cadrage serré sur les visages)</li>
+    <li>L'échange des alliances (gros plan sur les mains)</li>
+    <li>Le premier baiser</li>
+    <li>La signature des registres</li>
+    <li>La sortie sous les applaudissements / pétales / riz</li>
+  </ul>
+
+  <div class="article-tip">
+    <div class="article-tip-label">— Astuce Pro</div>
+    <p>Pour les mariages religieux traditionnels, le flash est souvent interdit. Utilisez un objectif à grande ouverture (f/1.4 à f/2.8) et montez en ISO sans hésiter. Le bruit numérique d'une photo légèrement granuleuse est largement préférable à une image ratée ou à un flash qui dérange la cérémonie.</p>
+  </div>
+
+  <h3>La séance couple : votre moment créatif</h3>
+
+  <p>C'est ici que vous exprimez votre <strong>signature artistique</strong>. Les mariés vous confient 45 minutes à 1 heure de leur journée pour créer des images qui seront encadrées dans leur salon pendant 40 ans. Ne gâchez pas cette opportunité.</p>
+
+  <p>Guidez-les doucement sans les diriger comme des mannequins :</p>
+  <ul>
+    <li>Proposez des poses naturelles : marcher main dans la main, se regarder, rire ensemble</li>
+    <li>Utilisez l'environnement : un mur texturé, une belle lumière, une perspective originale</li>
+    <li>Laissez-les vivre des moments ensemble pendant que vous capturez</li>
+    <li>Mélangez portraits posés et instants volés</li>
+    <li>Pensez à la golden hour : les 30 minutes avant le coucher du soleil offrent la plus belle lumière</li>
+  </ul>
+
+  <h3>La réception : l'énergie de la fête</h3>
+
+  <p>La réception est un marathon. Entre les discours émouvants, la première danse, la pièce montée et la soirée dansante, vous devez tenir 4 à 8 heures de plus.</p>
+
+  <ul>
+    <li><strong>Entrée des mariés</strong> : préparez-vous, c'est bref mais intense</li>
+    <li><strong>Discours</strong> : captez les émotions des mariés qui écoutent, pas juste les orateurs</li>
+    <li><strong>Première danse</strong> : utilisez un objectif grand angle et approchez-vous</li>
+    <li><strong>Soirée dansante</strong> : passez au flash déporté pour figer les mouvements tout en gardant l'ambiance</li>
+  </ul>
+
+  <div class="article-image">
+    <div class="article-image-inner" style="background-image:url('https://res.cloudinary.com/dzd4bw9fk/image/upload/f_auto,q_auto,w_1400/mariage-95');"></div>
+    <div class="article-image-caption">— La soirée dansante révèle les émotions les plus authentiques des invités.</div>
+  </div>
+
+  <div class="article-checklist">
+    <div class="article-checklist-title">— Pendant le jour J</div>
+    <h4>Les règles d'or</h4>
+    <ul>
+      <li>Changez de carte mémoire régulièrement (jamais une seule carte pour tout)</li>
+      <li>Sauvegardez sur disque externe pendant les temps morts</li>
+      <li>Restez hydraté et mangez quand vous pouvez (les mariés vous offrent souvent un plateau)</li>
+      <li>Vérifiez vos réglages à chaque changement de lumière</li>
+      <li>Communiquez avec votre binôme par signaux discrets</li>
+      <li>Gardez toujours le sourire, même si vous êtes épuisé</li>
+    </ul>
+  </div>
+
+  <h2 data-num="— 03">Phase 3 : L'Après-Mariage, Le Travail Invisible</h2>
+
+  <p>Le mariage est terminé, les mariés sont partis en voyage de noces. Pour vous, c'est là que <strong>le vrai travail commence</strong>. C'est dans cette phase que vous transformez des milliers d'images brutes en une histoire visuelle cohérente et émouvante.</p>
+
+  <h3>Le backup multiple (le soir même)</h3>
+
+  <p>Règle absolue : <strong>jamais une seule copie de vos fichiers</strong>. Dès votre retour, avant même de vous coucher, créez :</p>
+
+  <ol>
+    <li>Une copie sur votre disque dur principal</li>
+    <li>Une copie sur un disque dur externe différent</li>
+    <li>Une sauvegarde cloud (Backblaze, Google Drive, iCloud selon votre setup)</li>
+  </ol>
+
+  <p>Gardez vos cartes mémoire <em>intactes</em> pendant au moins 2 semaines. C'est votre assurance ultime.</p>
+
+  <h3>Le tri et la sélection (J+1 à J+3)</h3>
+
+  <p>Avec un mariage de 8 heures à 2 photographes, vous pouvez vous retrouver avec <strong>3000 à 6000 photos brutes</strong>. Le tri est brutal mais nécessaire :</p>
+
+  <ol>
+    <li><strong>Premier passage</strong> : supprimez tout ce qui est flou, mal cadré, yeux fermés, ou doublon</li>
+    <li><strong>Deuxième passage</strong> : sélectionnez les "meilleures prises" de chaque moment</li>
+    <li><strong>Troisième passage</strong> : gardez 400 à 800 photos finales selon le forfait</li>
+  </ol>
+
+  <p>Utilisez un logiciel dédié comme <strong>Photo Mechanic</strong> ou les outils de notation d'<strong>Adobe Bridge / Lightroom</strong> pour accélérer le process.</p>
+
+  <h3>Le traitement photo (J+3 à J+14)</h3>
+
+  <p>C'est ici que votre style artistique s'exprime. Quelques principes :</p>
+
+  <ul>
+    <li><strong>Cohérence</strong> : toutes les photos d'un même mariage doivent avoir le même rendu colorimétrique</li>
+    <li><strong>Naturel avant tout</strong> : évitez les filtres Instagram agressifs, privilégiez une édition subtile</li>
+    <li><strong>Peau réaliste</strong> : respectez les teintes naturelles, retouchez les imperfections mais pas l'identité</li>
+    <li><strong>Noir et blanc réfléchi</strong> : utilisez-le pour les moments les plus émouvants ou les plus graphiques</li>
+  </ul>
+
+  <div class="article-tip">
+    <div class="article-tip-label">— Astuce Pro</div>
+    <p>Créez un preset Lightroom "signature" pour chaque type de mariage (extérieur soleil, église sombre, soirée flash). Cela accélère drastiquement votre flux de travail tout en garantissant la cohérence de votre style.</p>
+  </div>
+
+  <h3>La livraison au client</h3>
+
+  <p>Soignez cette étape autant que le reste. Le client ne voit que le résultat final :</p>
+
+  <ul>
+    <li><strong>Galerie en ligne privée</strong> (Pic-Time, Pixieset, Smugmug) avec téléchargement haute définition</li>
+    <li><strong>Sneak peak</strong> : envoyez 10 à 20 photos dans les 48h pour combler l'attente</li>
+    <li><strong>Livraison complète</strong> : dans les 4 à 8 semaines selon votre forfait</li>
+    <li><strong>Album imprimé</strong> (option premium) : un objet tangible qu'ils garderont à vie</li>
+  </ul>
+
+  <h3>Le suivi post-livraison</h3>
+
+  <p>Une fois les photos livrées, <strong>ne disparaissez pas</strong>. C'est le moment d'entretenir la relation :</p>
+
+  <ul>
+    <li>Demandez un retour client par email ou formulaire</li>
+    <li>Sollicitez un témoignage écrit pour votre site web</li>
+    <li>Demandez la permission de publier certaines photos sur votre portfolio et réseaux sociaux</li>
+    <li>Proposez un anniversaire shoot l'année suivante</li>
+    <li>Envoyez une carte à Noël avec une photo du mariage</li>
+  </ul>
+
+  <div class="article-quote">
+    <p>Les mariés d'aujourd'hui sont les meilleurs ambassadeurs pour attirer les mariés de demain.</p>
+    <cite>— La Méthode NP PROD</cite>
+  </div>
+
+  <h2 data-num="— 04">Pour Conclure</h2>
+
+  <p>Couvrir un mariage, c'est bien plus qu'un travail technique. C'est un <strong>engagement émotionnel</strong>, une <strong>responsabilité immense</strong>, et surtout <strong>un privilège</strong>. Vous êtes invité à capturer l'un des plus beaux jours de la vie de deux personnes. Traitez cette mission avec le sérieux et la passion qu'elle mérite.</p>
+
+  <p>Notre méthode en trois phases — préparation rigoureuse, exécution maîtrisée, post-production soignée — nous a permis de livrer plus de 120 mariages sans accroc. Elle peut faire la même chose pour vous.</p>
+
+  <p>Et si vous cherchez une équipe professionnelle pour couvrir <em>votre</em> mariage plutôt que de le faire vous-même, vous savez où nous trouver.</p>
+
+</article>
+
+<!-- SHARE -->
+<div class="article-share">
+  <div class="article-share-label">— Partager cet article</div>
+  <div class="article-share-btns">
+    <a href="https://api.whatsapp.com/send?text=Comment%20Couvrir%20un%20Mariage%20de%20A%20à%20Z%20-%20https://npprod.ca/blog-article-1.html" target="_blank" rel="noopener" class="share-btn">WhatsApp</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://npprod.ca/blog-article-1.html" target="_blank" rel="noopener" class="share-btn">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?text=Comment%20Couvrir%20un%20Mariage%20de%20A%20à%20Z&url=https://npprod.ca/blog-article-1.html" target="_blank" rel="noopener" class="share-btn">X / Twitter</a>
+    <button class="share-btn" onclick="copyLink()">Copier le lien</button>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="article-cta">
+  <div class="article-cta-inner">
+    <h2>Vous Préparez Votre <em>Mariage</em> ?</h2>
+    <p>Plutôt que de gérer la couverture vous-même, confiez-la à notre équipe. Nous nous occupons de tout — de la préparation à la livraison.</p>
+    <a href="contact.html" class="article-cta-btn">Discuter de mon mariage →</a>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related">
+  <div class="related-inner">
+    <div class="related-head">
+      <h2>À Lire <em>Aussi</em></h2>
+    </div>
+    <div class="related-grid">
+      <a href="blog.html" class="related-card">
+        <div class="related-card-mark">✦</div>
+        <h3>Prochain Article</h3>
+        <p>Comment choisir son photographe de mariage : les 7 critères essentiels.</p>
+      </a>
+      <a href="blog.html" class="related-card">
+        <div class="related-card-mark">✦</div>
+        <h3>À Paraître</h3>
+        <p>Les tendances mariage 2026 qui vont marquer la saison.</p>
+      </a>
+      <a href="blog.html" class="related-card">
+        <div class="related-card-mark">✦</div>
+        <h3>Bientôt</h3>
+        <p>Budget mariage : comment optimiser vos dépenses sans sacrifier la qualité.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">NP · PROD</div>
+      <p>Agence créative · Marketing · Événementiel · Production de Contenu. Nous créons des marques, expériences et tendances.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="index.html#services">Marketing & Stratégie</a></li>
+        <li><a href="index.html#services">Production de Contenu</a></li>
+        <li><a href="index.html#services">Événementiel</a></li>
+        <li><a href="index.html#pricing">Photographie</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:+2290169212841">+229 01 69 21 28 41</a></li>
+        <li><a href="https://wa.me/16138799534" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="mailto:contact@npprod.ca">contact@npprod.ca</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <p>© 2026 NP PROD · Tous droits réservés.</p>
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/np_boss/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@npboss229" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.facebook.com/NpProdu/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const burger = document.getElementById('nav-burger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (burger && mobileMenu) {
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      });
+    });
+  }
+
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 20) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href);
+    alert('Lien copié !');
+  }
+</script>
+
+</body>
+</html>
