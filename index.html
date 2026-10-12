@@ -1978,5 +1978,72 @@
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
+<!-- POP-UP LA FOUINE (retiré automatiquement après le 22 nov. 2026) -->
+<style>
+  #lf-popup{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(5,5,8,.82);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s ease}
+  #lf-popup.lf-open{opacity:1;visibility:visible}
+  #lf-popup .lf-card{position:relative;width:100%;max-width:420px;max-height:calc(100vh - 32px);overflow:auto;background:#0d0d10;border:1px solid #d4af37;box-shadow:0 20px 60px rgba(0,0,0,.6);transform:translateY(16px) scale(.98);transition:transform .35s ease;font-family:inherit}
+  #lf-popup.lf-open .lf-card{transform:none}
+  #lf-popup .lf-img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#1a1a1f}
+  #lf-popup .lf-body{padding:16px 18px 20px;text-align:center;color:#f2efe8}
+  #lf-popup .lf-kicker{margin:0 0 4px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#d4af37}
+  #lf-popup .lf-title{margin:0 0 4px;font-size:22px;font-weight:800;letter-spacing:.03em}
+  #lf-popup .lf-meta{margin:0 0 14px;font-size:14px;color:#c9c3b6}
+  #lf-popup .lf-cta{display:block;width:100%;padding:14px 18px;background:#d4af37;color:#0b0b0d;font-weight:800;font-size:15px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:0}
+  #lf-popup .lf-cta:hover,#lf-popup .lf-cta:focus-visible{background:#f0d48a;outline:none}
+  #lf-popup .lf-close{position:absolute;top:8px;right:8px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(212,175,55,.6);background:rgba(0,0,0,.65);color:#fff;font-size:22px;line-height:1;cursor:pointer}
+  #lf-popup .lf-close:focus-visible{outline:2px solid #d4af37}
+  @media (prefers-reduced-motion:reduce){#lf-popup,#lf-popup .lf-card{transition:none}}
+</style>
+<script>
+(function () {
+  var FLYER_URL = "https://res.cloudinary.com/dzd4bw9fk/image/upload/q_auto,f_auto,w_900/v1791815474/La_Fouine_Ottawa_Final.png";
+  var BILLETTERIE_URL = "/lafouine";
+  var END_DATE = new Date("2026-11-22T00:00:00-05:00");
+  var KEY = "lf_popup_seen";
+
+  if (new Date() > END_DATE) return;
+  if (location.pathname.indexOf("lafouine") !== -1) return;
+  try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
+
+  function build() {
+    var wrap = document.createElement("div");
+    wrap.id = "lf-popup";
+    wrap.setAttribute("role", "dialog");
+    wrap.setAttribute("aria-modal", "true");
+    wrap.setAttribute("aria-label", "La Fouine Showcase");
+    wrap.innerHTML =
+      '<div class="lf-card">' +
+        '<button class="lf-close" type="button" aria-label="Fermer">&times;</button>' +
+        '<a href="' + BILLETTERIE_URL + '"><img class="lf-img" src="' + FLYER_URL + '" alt="La Fouine Showcase, samedi 21 novembre au Palace Ottawa"></a>' +
+        '<div class="lf-body">' +
+          '<p class="lf-kicker">Showcase exclusif · 500 places</p>' +
+          '<p class="lf-title">LA FOUINE À OTTAWA</p>' +
+          '<p class="lf-meta">Samedi 21 nov. · 22h – 2h · The Palace</p>' +
+          '<a class="lf-cta" href="' + BILLETTERIE_URL + '">Je prends mes billets</a>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(wrap);
+
+    function close() {
+      wrap.classList.remove("lf-open");
+      document.removeEventListener("keydown", onKey);
+      setTimeout(function () { wrap.remove(); }, 400);
+    }
+    function onKey(e) { if (e.key === "Escape") close(); }
+    wrap.querySelector(".lf-close").addEventListener("click", close);
+    wrap.addEventListener("click", function (e) { if (e.target === wrap) close(); });
+    document.addEventListener("keydown", onKey);
+
+    requestAnimationFrame(function () { wrap.classList.add("lf-open"); });
+    wrap.querySelector(".lf-cta").focus({ preventScroll: true });
+    try { sessionStorage.setItem(KEY, "1"); } catch (e) {}
+  }
+
+  function start() { setTimeout(build, 1500); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+  else start();
+})();
+</script>
 </body>
 </html>
