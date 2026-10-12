@@ -408,18 +408,25 @@ button.concert-btn{border:none;cursor:pointer}
     if(!photos.length){sec.hidden=true;return;}
     const sz=(u,w)=>u.replace('/upload/','/upload/q_auto,f_auto,w_'+w+'/');
     const track=document.getElementById('gal-track-'+key);
-    photos.forEach((u,i)=>{
+    // Chaque entrée peut être une URL ou une liste d'URLs à essayer dans l'ordre (ex. .jpg puis .jpeg)
+    const totalEl=document.getElementById('gal-total-'+key);
+    let total=photos.length;
+    photos.forEach((entry,i)=>{
+      const tries=Array.isArray(entry)?entry:[entry];
+      let t=0;
       const d=document.createElement('div');d.className='slide';
-      const img=document.createElement('img');img.src=sz(u,500);img.loading='lazy';img.alt='Photo '+(i+1);
-      d.appendChild(img);d.addEventListener('click',()=>openFlyer(sz(u,1600)));track.appendChild(d);
+      const img=document.createElement('img');img.loading='lazy';img.alt='Photo '+(i+1);
+      img.onerror=()=>{t++; if(t<tries.length){img.src=sz(tries[t],500);} else {d.remove(); total--; totalEl.textContent=total; if(!total)sec.hidden=true;}};
+      img.src=sz(tries[0],500);
+      d.appendChild(img);d.addEventListener('click',()=>openFlyer(sz(tries[t],1600)));track.appendChild(d);
     });
-    document.getElementById('gal-total-'+key).textContent=photos.length;
+    totalEl.textContent=total;
     const prev=document.getElementById('gal-prev-'+key),next=document.getElementById('gal-next-'+key),cur=document.getElementById('gal-cur-'+key);
     const w=()=>{const s=track.querySelector('.slide');return s?s.offsetWidth+14:354};
     prev.addEventListener('click',()=>track.scrollBy({left:-w()*2,behavior:'smooth'}));
     next.addEventListener('click',()=>track.scrollBy({left:w()*2,behavior:'smooth'}));
     track.addEventListener('scroll',()=>{
-      cur.textContent=Math.min(Math.round(track.scrollLeft/w())+1,photos.length);
+      cur.textContent=Math.min(Math.round(track.scrollLeft/w())+1,total);
       prev.disabled=track.scrollLeft<10;
       next.disabled=track.scrollLeft+track.clientWidth>=track.scrollWidth-10;
     });
@@ -459,7 +466,7 @@ button.concert-btn{border:none;cursor:pointer}
     <p class="video-recap-sub">Le concert au Bronson Music Theatre : la scène, la foule, l'émotion.</p>
     <div class="video-wrap">
       <video id="recap-video-yalevis-concert" playsinline preload="metadata" controls>
-        <source src="" type="video/mp4">
+        <source src="https://res.cloudinary.com/dzd4bw9fk/video/upload/q_auto/v1791816649/ya_levis_concert_recap.mp4" type="video/mp4">
       </video>
       <div class="vid-overlay" id="vid-overlay-yalevis-concert">
         <div class="play-circle pulse">
@@ -476,7 +483,7 @@ button.concert-btn{border:none;cursor:pointer}
     <div class="gallery-head">
       <div class="eyebrow" style="color:var(--gold)">Ya Levis · Concert</div>
       <h2>Les <em>Photos</em></h2>
-      <p>Les meilleurs moments du concert du 2 octobre 2026.</p>
+      <p>Les meilleurs moments du concert du 2 octobre 2026 — 75 photos.</p>
     </div>
     <div class="carousel">
       <button class="carousel-btn carousel-prev" id="gal-prev-yalevis-concert" aria-label="Précédent">‹</button>
@@ -485,9 +492,11 @@ button.concert-btn{border:none;cursor:pointer}
     </div>
     <div class="carousel-counter"><strong id="gal-cur-yalevis-concert">1</strong> / <span id="gal-total-yalevis-concert">0</span></div>
     <script>
-    npGallery('yalevis-concert', [
-      // 'https://res.cloudinary.com/dzd4bw9fk/image/upload/v.../photo.jpg',
-    ]);
+    // 75 photos : yalevisconcert1 à yalevisconcert75 (.jpg ou .jpeg)
+    npGallery('yalevis-concert', Array.from({length:75},(_,i)=>{
+      const b='https://res.cloudinary.com/dzd4bw9fk/image/upload/yalevisconcert'+(i+1);
+      return [b+'.jpg', b+'.jpeg'];
+    }));
     </script>
   </section>
 
