@@ -550,7 +550,7 @@ button.concert-btn{border:none;cursor:pointer}
     <div class="gallery-head">
       <div class="eyebrow" style="color:var(--gold)">Ya Levis · After Party</div>
       <h2>Les <em>Photos</em></h2>
-      <p>Les meilleurs moments de l'after au Palace.</p>
+      <p>Les meilleurs moments de l'after au Palace — 31 photos.</p>
     </div>
     <div class="carousel">
       <button class="carousel-btn carousel-prev" id="gal-prev-yalevis-after" aria-label="Précédent">‹</button>
@@ -559,9 +559,11 @@ button.concert-btn{border:none;cursor:pointer}
     </div>
     <div class="carousel-counter"><strong id="gal-cur-yalevis-after">1</strong> / <span id="gal-total-yalevis-after">0</span></div>
     <script>
-    npGallery('yalevis-after', [
-      // 'https://res.cloudinary.com/dzd4bw9fk/image/upload/v.../photo.jpg',
-    ]);
+    // 31 photos : yalevisafter-1 à yalevisafter-31 (.jpg ou .jpeg)
+    npGallery('yalevis-after', Array.from({length:31},(_,i)=>{
+      const b='https://res.cloudinary.com/dzd4bw9fk/image/upload/yalevisafter-'+(i+1);
+      return [b+'.jpg', b+'.jpeg'];
+    }));
     </script>
   </section>
 
