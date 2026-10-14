@@ -40,6 +40,10 @@
   footer a{color:var(--gold)}
   @media (max-width:760px){.hero{grid-template-columns:1fr}}
 </style>
+<!-- Meta Pixel -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','856280067001405');fbq('track','PageView');fbq('track','ViewContent',{content_name:'La Fouine Showcase'});</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=856280067001405&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
 </head>
 <body>
 <main class="wrap">
@@ -56,7 +60,7 @@
         <li>DJ Raspoutine · DJ Durand · MC Innoce</li>
         <li>Une seule date · 500 places · 19 ans et plus</li>
       </ul>
-      <a class="btn" href="https://buytickets.at/npprod/2469882" target="_blank" rel="noopener">Acheter mes billets</a>
+      <a class="btn" href="https://buytickets.at/npprod/2469882" onclick="fbq('track','InitiateCheckout')" target="_blank" rel="noopener">Acheter mes billets</a>
     </div>
   </section>
 
@@ -83,7 +87,7 @@
   <h2 id="billets">Acheter mes <span>billets</span></h2>
   <div class="tier" style="text-align:center;padding:28px">
     <p style="margin:0 0 16px">Billets Régulier, VIP, Meet &amp; Greet et booths disponibles en ligne.</p>
-    <a class="btn" href="https://buytickets.at/npprod/2469882" target="_blank" rel="noopener">Acheter sur la billetterie</a>
+    <a class="btn" href="https://buytickets.at/npprod/2469882" onclick="fbq('track','InitiateCheckout')" target="_blank" rel="noopener">Acheter sur la billetterie</a>
   </div>
   <p class="note">Paiement sécurisé. Les billets sont envoyés par courriel. Questions : 613-879-9534 · contact@npprod.ca</p>
 
